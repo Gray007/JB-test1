@@ -89,6 +89,8 @@ const App = () => {
     return (
       <div>
         <form onSubmit={checkStudent}>
+          <label>Please enter student ID</label>
+          <br/>
           <input value={newStudentId} onChange={handleStudentID}/>
           <button type="submit">check</button>
         </form>
