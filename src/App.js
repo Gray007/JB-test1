@@ -64,12 +64,12 @@ const App = () => {
 
     const updatedMissingList = (event) => {
       event.preventDefault()
-      const returnedTarget = Object.assign(student, formData)
+      const returnedTarget = {...student, ...formData}
       console.log(returnedTarget)
       studentService
         .update(newStudentId, returnedTarget)
         .then( updatedStudent => {
-          window.alert(`${JSON.stringify(updatedStudent)}`)
+          window.alert(`${updatedStudent.firstName} has been updated`)
           setStudent({})
         })
     }
